@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.bg-img {
+    background-image: url("../img/access-denied.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 86vh;
+    width: 100%;  
+}
