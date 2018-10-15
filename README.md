@@ -1,2 +1,5 @@
-#Raspberry Pi Security Cam with Web Interface
+# Raspberry Pi Security Cam with Web Interface
 Using opencv and django
+
+# Non Functional
+Still Needs Lots of Work
