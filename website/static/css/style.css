@@ -1,3 +1,9 @@
+.form {
+    text-align: center;
+    
+    background-color: aliceblue;
+}
+
 body {
     background-color: black;
     text-decoration: none;
@@ -16,4 +22,8 @@ h1 {
 
     height: 86vh;
     width: 100%;  
+}
+
+.login-btn {
+    color: red;
 }

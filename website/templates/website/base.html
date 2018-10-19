@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     {% load static %}
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     {% block title %}
@@ -16,15 +17,13 @@
   <body>
     <section id="nav-header">
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 {% load static %}
                 <img src="{% static 'img/white-camera.png' %}" width="30" height="30" class="d-inline-block align-top" alt="Camera">
                 Home Security
             </a>
-            <button class="btn btn-outline-danger my-2 my-sm-0">
-                Login
-                <a href="{% url 'login-page' %}"></a>
-            </button>
+            
+            <a id="login-btn" href="{% url 'login-page' %}">Login</a>
         </nav>
     </section>
 

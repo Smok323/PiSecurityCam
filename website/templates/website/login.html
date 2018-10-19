@@ -9,9 +9,10 @@
     <hr>
 
     <div class="container">
-        <div class="col-sm-12 col-md-6">
+        <div class="form col-sm-12 col-md-6">
             <div class="form-group">
-
+                {% csrf_token %}
+                {{ form.name.errors }}
                 <fieldset>
                     {{ form.username }}
                 </fieldset>
@@ -20,7 +21,7 @@
                     {{ form.password }}
                 </fieldset>
             
-                <button class="btn btn-warning" type="submit" method='POST' >Login</button>
+                <button class="btn btn-warning" type="submit" method='POST' value="Login" >Login</button>
             </div>
         </div>
     </div>
