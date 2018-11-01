@@ -1,13 +1,23 @@
 from django.shortcuts import render
-from django.http.response import StreamingHttpResponse
-from . import camera
+from django.http import StreamingHttpResponse, HttpResponseServerError
+from . import picam
+
+cam = picam.Camera()
 
 
 def home(request):
     return render(request, 'website/home.html')
 
 
-def cameraview(request):
-    # cam = camera.Camera()
+def gen(camera):
+    while True:
+        frame = camera.getframe()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
-    return render(request, 'website/camera.html')
+
+def cameraview(request):
+    try:
+        return StreamingHttpResponse(gen(cam), content_type="multipart/x-mixed-replace;boundary=frame")
+    except HttpResponseServerError as e:
+        print("aborted")
